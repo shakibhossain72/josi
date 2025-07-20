@@ -19,7 +19,7 @@ class SetUpProfileScreen extends GetView<SetUpProfileController> {
         body: SafeArea(
           child: SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.only(left: 20, bottom: 24, right: 24),
+              padding: const EdgeInsets.only(left: 20, bottom: 24, right: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -108,11 +108,11 @@ class SetUpProfileScreen extends GetView<SetUpProfileController> {
                       controller: controller.emailText,
                       hintText: 'Enter your address'
                   ),
-                  SizedBox(height: 20.h),
+                  SizedBox(height: 38.h),
                   CustomButton(
                       text: 'Next',
                       onTap: (){
-                        Get.toNamed(AppRoute.navBar);
+                        Get.toNamed(AppRoute.verificationSystemScreen);
                       })
                 ],
               ),
