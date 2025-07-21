@@ -98,7 +98,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () {
-                // Get.toNamed(AppRoute.notificationScreen);
+                // Get.toNamed(AppRoute.sentpackagescreen);
               },
               child: Container(
                 decoration: BoxDecoration(

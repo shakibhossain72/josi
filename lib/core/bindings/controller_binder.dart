@@ -11,22 +11,32 @@ import '../../features/sender/loacation_set_up_profile/presentation/controller/v
 import '../../features/splash/controller/splash_controller.dart';
 import '../../features/traveler/traveler_set_up_profile/presentation/controller/traveler_set_up_profile_controller.dart';
 
-
 class ControllerBinder extends Bindings {
   @override
   void dependencies() {
-
-      Get.put<SplashController>(SplashController(), permanent: true);
-      Get.put<ChooseRoleController>(ChooseRoleController(), permanent: true);
-      Get.put<SignInController>(SignInController(), permanent: true);
-      Get.put<SignUpController>(SignUpController(), permanent: true);
-      Get.put<VerifyController>(VerifyController(), permanent: true);
-      Get.put<ResetPasswordController>(ResetPasswordController(), permanent: true);
-      Get.put<VerifyCodeForResetController>(VerifyCodeForResetController(), permanent: true);
-      Get.put<NewPasswordController>(NewPasswordController(), permanent: true);
-      Get.put<TravelerSetUpProfileController>(TravelerSetUpProfileController(), permanent: true);
-      Get.put<SetUpProfileController>(SetUpProfileController(), permanent: true);
-      Get.put<VerificationSystemController>(VerificationSystemController(), permanent: true);
-
+    Get.put<SplashController>(SplashController(), permanent: true);
+    Get.put<ChooseRoleController>(ChooseRoleController(), permanent: true);
+    Get.put<SignInController>(SignInController(), permanent: true);
+    Get.put<SignUpController>(SignUpController(), permanent: true);
+    Get.put<VerifyController>(VerifyController(), permanent: true);
+    Get.put<ResetPasswordController>(
+      ResetPasswordController(),
+      permanent: true,
+    );
+    Get.put<VerifyCodeForResetController>(
+      VerifyCodeForResetController(),
+      permanent: true,
+    );
+    Get.put<NewPasswordController>(NewPasswordController(), permanent: true);
+    Get.put<TravelerSetUpProfileController>(
+      TravelerSetUpProfileController(),
+      permanent: true,
+    );
+    Get.put<SetUpProfileController>(SetUpProfileController(), permanent: true);
+    Get.put<VerificationSystemController>(
+      VerificationSystemController(),
+      permanent: true,
+    );
+    
   }
 }
