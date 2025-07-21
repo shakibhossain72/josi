@@ -1,7 +1,6 @@
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:josi/features/sender/loacation_set_up_profile/presentation/screen/set_up_profile_screen.dart';
 import 'package:josi/features/sender/loacation_set_up_profile/presentation/screen/verification_system_screen.dart';
-import 'package:josi/features/sender/send_package/send_pacjage.dart';
 import 'package:josi/features/traveler/nav_bar/presentation/screen/traveler_nav_bar.dart';
 import 'package:josi/features/traveler/traveler_set_up_profile/presentation/screen/traveler_set_up_profile_screen.dart';
 import '../features/auth/Presentation/screen/new_password_screen.dart';
@@ -42,7 +41,7 @@ class AppRoute {
   // Traveler screen
   static String travelerNavBar = "/travelerNavBar";
   static String travelerSetUpProfileScreen = "/travelerSetUpProfileScreen";
-  static String sentpackagescreen = "/sentpackagescreen";
+
 
   // static String notificationScreen = "/notificationScreen";
 
@@ -84,6 +83,6 @@ class AppRoute {
       name: travelerSetUpProfileScreen,
       page: () => (TravelerSetUpProfileScreen()),
     ),
-    GetPage(name: sentpackagescreen, page: () => (Sentpackage())),
+   
   ];
 }
