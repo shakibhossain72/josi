@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../core/utils/constants/icon_path.dart';
+import '../../booking/presentation/screen/booking_screen.dart';
 import '../../home/presentation/screen/home_screen.dart';
 
 
@@ -14,7 +15,7 @@ class NavBarController extends GetxController {
 
   final List<Widget> screens = [
     HomeScreen(),
-    HomeScreen(),
+    BookingScreen(),
     HomeScreen(),
     HomeScreen(),
 

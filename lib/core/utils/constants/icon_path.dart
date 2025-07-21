@@ -22,6 +22,7 @@ class IconPath {
   static const String locationIcon = '$_basePath/location_icon.png';
   static const String profileEdit = '$_basePath/profile_edit.png';
   static const String profileIcon = '$_basePath/profile_icon.png';
+  static const String checkIcon = '$_basePath/check_icon.png';
 
   static const String noIcon = '$_basePath/noIcon.svg';
 
