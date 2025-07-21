@@ -6,78 +6,54 @@ import 'package:josi/core/utils/constants/app_colors.dart';
 import 'package:josi/core/utils/constants/app_sizer.dart';
 import 'package:josi/core/utils/constants/icon_path.dart';
 import 'package:josi/features/sender/home/presentation/controller/current_shipping_controller.dart';
-import 'package:josi/features/sender/home/presentation/widgets/current_shipping_card_sections.dart';
+import 'package:josi/features/sender/home/presentation/widgets/current_shipping_card/current_shipping_card_sections.dart';
+import 'package:josi/features/sender/home/presentation/widgets/upcomming_shipping_card/upcomming_shipping_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Initialize controller
-    Get.put(ShippingController());
+    Get.put(CurrentShippingController());
 
     return Scaffold(
-      backgroundColor: Color(0xFFF9F9F9),
-      body: Stack(
-        children: [
-          Column(
-            children: [
-              // Header with profile and search
-              Container(
-                height: 350,
-                padding: EdgeInsets.only(top: 45),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(30),
-                    bottomRight: Radius.circular(30),
-                  ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 16, right: 16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      _buildHeader(),
-                      SizedBox(height: 20),
-                      _buildSearchBar(),
-                      // SizedBox(height: ),
-                      Text(
-                        "Current Shipping",
-                        style: globalTextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                        ),
+      backgroundColor: AppColors.backgroundColor,
+      body: SafeArea(
+        bottom: false,
+        child: Column(
+          children: [
+            // Fixed Header
+            Padding(
+              padding: const EdgeInsets.only(left: 16, right: 16),
+              child: _buildHeader(),
+            ),
+
+            // Scrollable Content
+            Expanded(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.only(left: 16, right: 16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: 8.0),
+                    _buildSearchBar(),
+                    Text(
+                      "Current Shipping",
+                      style: globalTextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
                       ),
-                    ],
-                  ),
+                    ),
+                    SizedBox(height: 8.0),
+                    ShippingCardsSection(),
+                    SizedBox(height: 16),
+                    UpcommingShippingScreen(),
+                  ],
                 ),
               ),
-              // SizedBox(height: 80), // Space for the floating cards
-              // Expanded(
-              //   child: Padding(
-              //     padding: EdgeInsets.all(16),
-              //     child: Column(
-              //       children: [
-              //         Text(
-              //           'Other Content Here',
-              //           style: globalTextStyle(fontSize: 16),
-              //         ),
-              //       ],
-              //     ),
-              //   ),
-              // ),
-            ],
-          ),
-
-          // Floating Shipping Cards
-          Positioned(
-            top: 220,
-            left: 0,
-            right: 0,
-            child: ShippingCardsSection(),
-          ),
-        ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -156,7 +132,7 @@ class HomeScreen extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 8),
       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 4.0),
       decoration: BoxDecoration(
-        color: Color(0xFFf9f9f9),
+        // color: Color(0xFFf9f9f9),
         borderRadius: BorderRadius.circular(25),
         boxShadow: [
           BoxShadow(

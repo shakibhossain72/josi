@@ -52,7 +52,7 @@ class ShippingCard extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    SizedBox(height: 4.0),
+                    SizedBox(height: 15.0),
                     Text(
                       'Customer',
                       style: globalTextStyle(
@@ -69,7 +69,7 @@ class ShippingCard extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    SizedBox(height: 16),
+                    SizedBox(height: 12),
                     Text(
                       'Status',
                       style: globalTextStyle(
@@ -77,11 +77,11 @@ class ShippingCard extends StatelessWidget {
                         fontSize: 12,
                       ),
                     ),
-                    SizedBox(height: 4),
+                    SizedBox(height: 8.0),
                     Container(
                       padding: EdgeInsets.symmetric(
                         horizontal: 12,
-                        vertical: 6,
+                        vertical: 6.0,
                       ),
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -90,8 +90,8 @@ class ShippingCard extends StatelessWidget {
                       child: Text(
                         data.status,
                         style: globalTextStyle(
-                          color: Colors.black,
-                          fontSize: 12,
+                          color: AppColors.textPrimary,
+                          fontSize: 12.sp,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
@@ -112,7 +112,8 @@ class ShippingCard extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    height: 80,
+                    padding: EdgeInsets.all(1.0),
+                    height: 150,
                     child: DottedLine(
                       direction: Axis.vertical,
                       lineLength: double.infinity,
@@ -157,7 +158,7 @@ class ShippingCard extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    SizedBox(height: 30),
+                    SizedBox(height: 15),
                     Text(
                       'To',
                       style: globalTextStyle(
