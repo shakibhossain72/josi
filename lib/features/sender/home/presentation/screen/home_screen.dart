@@ -8,6 +8,7 @@ import 'package:josi/core/utils/constants/icon_path.dart';
 import 'package:josi/features/sender/home/presentation/controller/current_shipping_controller.dart';
 import 'package:josi/features/sender/home/presentation/widgets/current_shipping_card/current_shipping_card_sections.dart';
 import 'package:josi/features/sender/home/presentation/widgets/upcomming_shipping_card/upcomming_shipping_screen.dart';
+import 'package:josi/features/sender/notification/screen/notification_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -98,7 +99,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () {
-                // Get.toNamed(AppRoute.sentpackagescreen);
+                Get.to(() => NotificationScreen());
               },
               child: Container(
                 decoration: BoxDecoration(
