@@ -42,9 +42,11 @@ class AppRoute {
   static String verificationSystemScreen = "/verificationSystemScreen";
 
 
+
   static String viewDetailsScreen = "/viewDetailsScreen";
   static String writeReviewScreen = "/writeReviewScreen";
   static String cancelOrderScreen = "/cancelOrderScreen";
+
 
 
 
@@ -55,9 +57,7 @@ class AppRoute {
   static String travelerSetUpProfileScreen = "/travelerSetUpProfileScreen";
 
 
-
   // static String notificationScreen = "/notificationScreen";
-
 
   static List<GetPage> routes = [
     GetPage(name: init, page: () => const SplashScreen()),
@@ -73,7 +73,10 @@ class AppRoute {
     GetPage(name: signInScreen, page: () => (SignInScreen())),
     GetPage(name: resetPasswordScreen, page: () => (ResetPasswordScreen())),
     GetPage(name: verifyCodeScreen, page: () => (VerifyCodeScreen())),
-    GetPage(name: verifyCodeScreenForReset, page: () => (VerifyCodeScreenForReset()),),
+    GetPage(
+      name: verifyCodeScreenForReset,
+      page: () => (VerifyCodeScreenForReset()),
+    ),
     GetPage(name: newPasswordScreen, page: () => (NewPasswordScreen())),
 
     GetPage(name: passChangeSuccessScreen, page: () => (PassChangeSuccessScreen())),
@@ -87,10 +90,25 @@ class AppRoute {
 
 
 
+    GetPage(
+      name: passChangeSuccessScreen,
+      page: () => (PassChangeSuccessScreen()),
+    ),
+    GetPage(name: allowLocationScreen, page: () => (AllowLocationScreen())),
+    GetPage(name: setUpProfileScreen, page: () => (SetUpProfileScreen())),
+    GetPage(
+      name: verificationSystemScreen,
+      page: () => (VerificationSystemScreen()),
+    ),
+
+
     // Added by shahriar
     // Traveler Routes
     GetPage(name: travelerNavBar, page: () => (TravelerNavBar())),
-    GetPage(name: travelerSetUpProfileScreen, page: () => (TravelerSetUpProfileScreen())),
-
+    GetPage(
+      name: travelerSetUpProfileScreen,
+      page: () => (TravelerSetUpProfileScreen()),
+    ),
+   
   ];
 }
