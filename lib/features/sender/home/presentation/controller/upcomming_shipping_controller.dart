@@ -22,6 +22,8 @@ class UpcomingShippingController extends GetxController {
         UpcomingShippingModel(
           id: '1',
           senderName: 'Rohit Khan',
+          about:
+              "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           senderImage: 'assets/images/user_profile.png',
           isVerified: true,
           fromLocation: 'New York',
@@ -36,6 +38,8 @@ class UpcomingShippingController extends GetxController {
         UpcomingShippingModel(
           id: '2',
           senderName: 'Jhon Deo',
+          about:
+              'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
           senderImage: 'assets/images/user_profile.png',
           isVerified: true,
           fromLocation: 'New York',
@@ -50,6 +54,8 @@ class UpcomingShippingController extends GetxController {
         UpcomingShippingModel(
           id: '2',
           senderName: 'Lokoman Deo',
+          about:
+              'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
           senderImage: 'assets/images/user_profile.png',
           isVerified: true,
           fromLocation: 'New York',
@@ -64,6 +70,8 @@ class UpcomingShippingController extends GetxController {
         UpcomingShippingModel(
           id: '2',
           senderName: 'Lokoman Deo',
+          about:
+              'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
           senderImage: 'assets/images/user_profile.png',
           isVerified: true,
           fromLocation: 'New York',
@@ -78,6 +86,8 @@ class UpcomingShippingController extends GetxController {
         UpcomingShippingModel(
           id: '2',
           senderName: 'Lokoman Deo',
+          about:
+              'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
           senderImage: 'assets/images/user_profile.png',
           isVerified: true,
           fromLocation: 'New York',

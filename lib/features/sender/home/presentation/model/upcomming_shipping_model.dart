@@ -1,6 +1,7 @@
 class UpcomingShippingModel {
   final String id;
   final String senderName;
+  final String about;
   final String senderImage;
   final bool isVerified;
   final String fromLocation;
@@ -15,6 +16,7 @@ class UpcomingShippingModel {
   UpcomingShippingModel({
     required this.id,
     required this.senderName,
+    required this.about,
     required this.senderImage,
     required this.isVerified,
     required this.fromLocation,
@@ -31,6 +33,7 @@ class UpcomingShippingModel {
     return UpcomingShippingModel(
       id: json['id'] ?? '',
       senderName: json['senderName'] ?? '',
+      about: json['about'] ?? '',
       senderImage: json['senderImage'] ?? '',
       isVerified: json['isVerified'] ?? false,
       fromLocation: json['fromLocation'] ?? '',

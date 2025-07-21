@@ -169,32 +169,6 @@ class TravelerScreenCard extends StatelessWidget {
             ],
           ),
 
-          // Container(
-          //   width: double.infinity,
-          //   height: 2,
-          //   margin: EdgeInsets.symmetric(vertical: 8),
-          //   child: Stack(
-          //     children: [
-          //       Container(
-          //         height: 2,
-          //         width: double.infinity,
-          //         color: AppColors.textSecondary.withValues(alpha: 0.8),
-          //       ),
-          //       Positioned(
-          //         right: 0,
-          //         top: -4,
-          //         child: Container(
-          //           width: 10,
-          //           height: 10,
-          //           decoration: BoxDecoration(
-          //             color: AppColors.textSecondary,
-          //             shape: BoxShape.circle,
-          //           ),
-          //         ),
-          //       ),
-          //     ],
-          //   ),
-          // ),
           SizedBox(height: 16),
 
           // Bottom section with details and booking
