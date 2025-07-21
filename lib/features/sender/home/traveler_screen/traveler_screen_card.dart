@@ -3,11 +3,11 @@ import 'package:josi/core/common/widgets/custom_text.dart';
 import 'package:josi/core/utils/constants/app_colors.dart';
 import 'package:josi/features/sender/home/presentation/model/upcomming_shipping_model.dart';
 
-class UpcomingShippingCard extends StatelessWidget {
+class TravelerScreenCard extends StatelessWidget {
   final UpcomingShippingModel shipping;
   final VoidCallback onBookNow;
 
-  const UpcomingShippingCard({
+  const TravelerScreenCard({
     super.key,
     required this.shipping,
     required this.onBookNow,

@@ -4,6 +4,7 @@ import 'package:josi/core/common/widgets/custom_text.dart';
 import 'package:josi/core/utils/constants/app_colors.dart';
 import 'package:josi/features/sender/home/presentation/controller/upcomming_shipping_controller.dart';
 import 'package:josi/features/sender/home/presentation/widgets/upcomming_shipping_card/upcomming_shipping_card.dart';
+import 'package:josi/features/sender/home/traveler_screen/traveler_screen.dart';
 
 class UpcommingShippingScreen extends StatelessWidget {
   const UpcommingShippingScreen({super.key});
@@ -28,10 +29,15 @@ class UpcommingShippingScreen extends StatelessWidget {
                 onTap: () {
                   // Navigate to view all screen
                 },
-                child: CustomText(
-                  text: 'View All',
-                  fontSize: 14,
-                  color: AppColors.textSecondary,
+                child: GestureDetector(
+                  onTap: () {
+                    Get.to(() => TravelerScreen());
+                  },
+                  child: CustomText(
+                    text: 'View All',
+                    fontSize: 14,
+                    color: AppColors.textSecondary,
+                  ),
                 ),
               ),
             ],
