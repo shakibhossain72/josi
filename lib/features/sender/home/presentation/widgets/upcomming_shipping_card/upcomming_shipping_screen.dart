@@ -4,6 +4,7 @@ import 'package:josi/core/common/widgets/custom_text.dart';
 import 'package:josi/core/utils/constants/app_colors.dart';
 import 'package:josi/features/sender/home/presentation/controller/upcomming_shipping_controller.dart';
 import 'package:josi/features/sender/home/presentation/widgets/upcomming_shipping_card/upcomming_shipping_card.dart';
+import 'package:josi/features/sender/home/traveler_details_screen/screen/traveler_details_screen.dart';
 import 'package:josi/features/sender/home/traveler_screen/traveler_screen.dart';
 
 class UpcommingShippingScreen extends StatelessWidget {
@@ -68,9 +69,14 @@ class UpcommingShippingScreen extends StatelessWidget {
               itemCount: controller.upcomingShippingList.length,
               itemBuilder: (context, index) {
                 final shipping = controller.upcomingShippingList[index];
-                return UpcomingShippingCard(
-                  shipping: shipping,
-                  onBookNow: () => controller.bookShipping(shipping.id),
+                return GestureDetector(
+                  onTap: () {
+                    Get.to(() => TravelerDetailsScreen(shipping: shipping));
+                  },
+                  child: UpcomingShippingCard(
+                    shipping: shipping,
+                    onBookNow: () => controller.bookShipping(shipping.id),
+                  ),
                 );
               },
             );

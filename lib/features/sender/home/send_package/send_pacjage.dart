@@ -5,10 +5,11 @@ import 'package:josi/core/common/widgets/custom_appbar.dart';
 import 'package:josi/core/common/widgets/custom_button.dart';
 import 'package:josi/core/common/widgets/custom_text.dart';
 import 'package:josi/core/common/widgets/custom_textformfield.dart';
+import 'package:josi/core/style/global_text_style.dart';
 import 'package:josi/core/utils/constants/app_colors.dart';
 import 'package:josi/core/utils/constants/app_sizer.dart';
-import 'package:josi/features/sender/send_package/checkout.dart';
-import 'package:josi/features/sender/send_package/controller/sent_package_controller.dart';
+import 'package:josi/features/sender/home/send_package/checkout.dart';
+import 'package:josi/features/sender/home/send_package/controller/sent_package_controller.dart';
 
 class Sentpackage extends GetView<SentPackageController> {
   const Sentpackage({super.key});
@@ -67,7 +68,7 @@ class Sentpackage extends GetView<SentPackageController> {
 
                 SizedBox(height: 10.h),
                 CustomTextField(
-                  controller: controller.nameText,
+                  controller: controller.phoneText,
                   hintText: '(219) 555-0114',
                   fillColor: Colors.white,
                 ),
@@ -81,7 +82,7 @@ class Sentpackage extends GetView<SentPackageController> {
 
                 SizedBox(height: 10.h),
                 CustomTextField(
-                  controller: controller.nameText,
+                  controller: controller.addressText,
                   hintText: 'Florida,  USA',
                   fillColor: Colors.white,
                 ),
@@ -100,6 +101,11 @@ class Sentpackage extends GetView<SentPackageController> {
                   maxLines: 4,
 
                   keyboardType: TextInputType.text,
+                  style: globalTextStyle(
+                    color: AppColors.textPrimary,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 16.sp,
+                  ),
 
                   decoration: InputDecoration(
                     hintText: "Enter Message",
