@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:josi/features/sender/message/screen/message_screen.dart';
+import 'package:josi/features/sender/profile/screen/profile_screen.dart';
 import '../../../../core/utils/constants/icon_path.dart';
 import '../../booking/presentation/screen/booking_screen.dart';
 import '../../home/presentation/screen/home_screen.dart';
-
 
 class NavBarController extends GetxController {
   final _selectedIndex = 0.obs;
@@ -16,9 +17,8 @@ class NavBarController extends GetxController {
   final List<Widget> screens = [
     HomeScreen(),
     BookingScreen(),
-    HomeScreen(),
-    HomeScreen(),
-
+    MessageScreen(),
+    ProfileScreen(),
   ];
 
   final List<String> labels = const [
