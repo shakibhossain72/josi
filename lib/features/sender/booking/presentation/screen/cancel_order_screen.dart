@@ -55,7 +55,7 @@ class CancelOrderScreen extends GetView<CancelController> {
                   fontWeight: FontWeight.w700,
                 ),
 
-                SizedBox(height: 20),
+               // SizedBox(height: 16),
                 ListView.builder(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
@@ -63,6 +63,7 @@ class CancelOrderScreen extends GetView<CancelController> {
                   itemBuilder: (context, index) {
                     return Obx(
                           () => RadioListTile<String>(
+                            contentPadding: EdgeInsets.zero,
                         activeColor: AppColors.primary,
                         title: CustomText(
                           text: reasons[index],

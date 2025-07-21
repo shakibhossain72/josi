@@ -17,7 +17,7 @@ class SplashController extends GetxController {
       //Get.offNamed(AppRoute.travelerNavBar);
 
       //  Get.offNamed(AppRoute.onboardingScreen);
-      Get.offNamed(AppRoute.navBar);
+      //Get.offNamed(AppRoute.navBar);
       //Get.offNamed(AppRoute.workerNavBar);
 
     });
