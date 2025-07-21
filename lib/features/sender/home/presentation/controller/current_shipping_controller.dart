@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:josi/features/sender/home/presentation/model/current_shipping_model.dart';
 
-class ShippingController extends GetxController {
+class CurrentShippingController extends GetxController {
   var currentPage = 0.obs;
   var shippingList = <ShippingData>[].obs;
   late PageController pageController;

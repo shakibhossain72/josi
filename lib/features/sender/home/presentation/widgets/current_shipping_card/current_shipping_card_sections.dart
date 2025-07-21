@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:josi/features/sender/home/presentation/controller/current_shipping_controller.dart';
-import 'package:josi/features/sender/home/presentation/widgets/current_shiping_card.dart';
+import 'package:josi/features/sender/home/presentation/widgets/current_shipping_card/current_shiping_card.dart';
 
 class ShippingCardsSection extends StatelessWidget {
   const ShippingCardsSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final ShippingController controller = Get.find<ShippingController>();
+    final CurrentShippingController controller =
+        Get.find<CurrentShippingController>();
 
-    return Container(
-      padding: EdgeInsets.all(4.0),
-      height: 250,
+    return SizedBox(
+      width: double.infinity,
+      height: 240,
       child: Column(
         children: [
           Expanded(
@@ -25,7 +26,7 @@ class ShippingCardsSection extends StatelessWidget {
                 itemCount: controller.shippingList.length,
                 itemBuilder: (context, index) {
                   return Container(
-                    margin: EdgeInsets.symmetric(horizontal: 16),
+                    margin: EdgeInsets.symmetric(horizontal: 2),
                     child: ShippingCard(data: controller.shippingList[index]),
                   );
                 },
