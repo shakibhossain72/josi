@@ -25,13 +25,10 @@ class IconPath {
 
   static const String noIcon = '$_basePath/noIcon.svg';
 
-
-
-
   static const String notificationIcon = '$_basePath/notificarion.png';
   static const String searchIcon = '$_basePath/search.png';
   static const String filterIcon = '$_basePath/filter.png';
-
-
-
+  static const String paypalIcon = '$_basePath/paypal_icon.png';
+  static const String stripeIcon = '$_basePath/stripe.png';
+  static const String paymentSuccessIcon = '$_basePath/payment_success.png';
 }

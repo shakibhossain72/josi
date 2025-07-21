@@ -8,6 +8,7 @@ import 'package:josi/core/common/widgets/custom_textformfield.dart';
 import 'package:josi/core/utils/constants/app_colors.dart';
 import 'package:josi/core/utils/constants/app_sizer.dart';
 import 'package:josi/features/sender/home/presentation/model/upcomming_shipping_model.dart';
+import 'package:josi/features/sender/home/send_package/send_pacjage.dart';
 import 'package:josi/features/sender/home/traveler_details_screen/controller/traveler_details_controller.dart';
 
 class TravelerDetailsScreen extends StatelessWidget {
@@ -615,7 +616,12 @@ class TravelerDetailsScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                CustomButton(text: "Next", onTap: () {}),
+                CustomButton(
+                  text: "Next",
+                  onTap: () {
+                    Get.to(() => Sentpackage());
+                  },
+                ),
                 SizedBox(height: 60),
               ],
             ),

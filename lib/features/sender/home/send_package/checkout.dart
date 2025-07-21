@@ -5,6 +5,7 @@ import 'package:josi/core/common/widgets/custom_button.dart';
 import 'package:josi/core/common/widgets/custom_text.dart';
 import 'package:josi/core/utils/constants/app_colors.dart';
 import 'package:josi/core/utils/constants/app_sizer.dart';
+import 'package:josi/features/sender/home/payment/screen/payment_screen.dart';
 
 class Checkout extends GetView {
   const Checkout({super.key});
@@ -182,6 +183,7 @@ class Checkout extends GetView {
                 CustomButton(
                   text: 'Next',
                   onTap: () {
+                    Get.to(() => PaymentScreen());
                     // Get.toNamed(AppRoute.travelerNavBar);
                   },
                 ),

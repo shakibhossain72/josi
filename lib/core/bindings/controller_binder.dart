@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:josi/features/sender/home/send_package/controller/sent_package_controller.dart';
 import '../../features/auth/controller/new_password_controller.dart';
 import '../../features/auth/controller/reset_password_controller.dart';
 import '../../features/auth/controller/sign_in_controller.dart';
@@ -37,6 +38,6 @@ class ControllerBinder extends Bindings {
       VerificationSystemController(),
       permanent: true,
     );
-    
+    Get.put<SentPackageController>(SentPackageController(), permanent: true);
   }
 }
