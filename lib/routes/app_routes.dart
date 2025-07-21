@@ -1,4 +1,7 @@
 import 'package:get/get_navigation/src/routes/get_route.dart';
+import 'package:josi/features/sender/booking/presentation/screen/cancel_order_screen.dart';
+import 'package:josi/features/sender/booking/presentation/screen/view_details_screen.dart';
+import 'package:josi/features/sender/booking/presentation/screen/write_review_screen.dart';
 import 'package:josi/features/sender/loacation_set_up_profile/presentation/screen/set_up_profile_screen.dart';
 import 'package:josi/features/sender/loacation_set_up_profile/presentation/screen/verification_system_screen.dart';
 import 'package:josi/features/traveler/nav_bar/presentation/screen/traveler_nav_bar.dart';
@@ -39,6 +42,13 @@ class AppRoute {
   static String verificationSystemScreen = "/verificationSystemScreen";
 
 
+  static String viewDetailsScreen = "/viewDetailsScreen";
+  static String writeReviewScreen = "/writeReviewScreen";
+  static String cancelOrderScreen = "/cancelOrderScreen";
+
+
+
+
 
   // Traveler screen
   static String travelerNavBar = "/travelerNavBar";
@@ -70,6 +80,10 @@ class AppRoute {
      GetPage(name: allowLocationScreen, page: () => (AllowLocationScreen())),
      GetPage(name: setUpProfileScreen, page: () => (SetUpProfileScreen())),
      GetPage(name: verificationSystemScreen, page: () => (VerificationSystemScreen())),
+
+     GetPage(name: viewDetailsScreen, page: () => (ViewDetailsScreen(index: 0))),
+     GetPage(name: writeReviewScreen, page: () => (WriteReviewScreen(index: 3,))),
+     GetPage(name: cancelOrderScreen, page: () => (CancelOrderScreen())),
 
 
 

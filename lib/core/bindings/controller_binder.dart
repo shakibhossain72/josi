@@ -6,6 +6,8 @@ import '../../features/auth/controller/sign_up_controller.dart';
 import '../../features/auth/controller/verify_code_for_reset_controller.dart';
 import '../../features/auth/controller/verify_controller.dart';
 import '../../features/choose_role/controller/choose_role_controlller.dart';
+import '../../features/sender/booking/controller/booking_controller.dart';
+import '../../features/sender/booking/controller/cancel_controller.dart';
 import '../../features/sender/loacation_set_up_profile/presentation/controller/set_up_profile_controller.dart';
 import '../../features/sender/loacation_set_up_profile/presentation/controller/verification_system_controller.dart';
 import '../../features/splash/controller/splash_controller.dart';
@@ -27,6 +29,8 @@ class ControllerBinder extends Bindings {
       Get.put<TravelerSetUpProfileController>(TravelerSetUpProfileController(), permanent: true);
       Get.put<SetUpProfileController>(SetUpProfileController(), permanent: true);
       Get.put<VerificationSystemController>(VerificationSystemController(), permanent: true);
+      Get.put<BookingController>(BookingController(), permanent: true);
+      Get.put<CancelController>(CancelController(), permanent: true);
 
   }
 }
