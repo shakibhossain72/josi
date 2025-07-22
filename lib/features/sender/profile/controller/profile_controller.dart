@@ -4,19 +4,21 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:josi/features/sender/profile/screen/edit_profile_screen.dart';
+import 'package:josi/features/auth/Presentation/screen/sign_in_screen.dart';
 
 // Profile Controller
 class ProfileController extends GetxController {
   var selectedLanguage = 'English (US)'.obs;
   // Available languages data
   final List<Map<String, String>> languages = [
-    {'code': 'en', 'name': 'English', 'flagAsset': 'assets/icons/eng_flag.png'},
+    {'code': 'EN', 'name': 'English', 'flagAsset': 'assets/icons/eng_flag.png'},
     {
-      'code': 'fr',
-      'name': 'French',
-      'flagAsset': 'assets/icons/french_flag.png',
+      'code': 'IND',
+      'name': 'Bahasa Indonesia',
+      'flagAsset': 'assets/icons/Indonesia.png',
     },
+    {'code': 'CN', 'name': 'Chinese', 'flagAsset': 'assets/icons/china.png'},
+    {'code': 'DE', 'name': 'Deutsch', 'flagAsset': 'assets/icons/germany.png'},
   ];
 
   // Method to change language
@@ -40,26 +42,10 @@ class ProfileController extends GetxController {
     }
   }
 
-  void editProfile() {
-    Get.to(() => EditProfileScreen());
-    // Navigate to edit profile screen
-    if (kDebugMode) {
-      print('Edit Profile tapped');
-    }
-  }
+  var notificationsEnabled = true.obs;
 
-  void openPrivacyPolicy() {
-    // Navigate to privacy policy
-    if (kDebugMode) {
-      print('Privacy Policy tapped');
-    }
-  }
-
-  void openFAQ() {
-    // Navigate to FAQ screen
-    if (kDebugMode) {
-      print('FAQ tapped');
-    }
+  void toggleSenderMode(bool value) {
+    notificationsEnabled.value = value;
   }
 
   void logout() {
@@ -72,7 +58,7 @@ class ProfileController extends GetxController {
           TextButton(onPressed: () => Get.back(), child: Text('Cancel')),
           TextButton(
             onPressed: () {
-              // Perform logout
+              Get.to(() => SignInScreen());
               Get.back();
               if (kDebugMode) {
                 print('User logged out');

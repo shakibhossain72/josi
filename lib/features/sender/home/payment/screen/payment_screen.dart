@@ -392,6 +392,7 @@ class PaymentScreen extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,
                   foregroundColor: Colors.white,
+                  padding: EdgeInsets.all(12),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(25),
                   ),
@@ -406,48 +407,7 @@ class PaymentScreen extends StatelessWidget {
           ],
         ),
       ),
-      barrierDismissible: false,
+      barrierDismissible: true,
     );
   }
-
-  // void _showPaymentSuccess() {
-  //   Get.dialog(
-  //     AlertDialog(
-  //       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-  //       title: Column(
-  //         children: [
-  //           Image.asset(IconPath.paymentSuccessIcon, height: 110, width: 100),
-  //           // Icon(Icons.check_circle, color: Colors.green, size: 48),
-  //           SizedBox(height: 16),
-  //           Text(
-  //             'Congratulations!',
-  //             style: globalTextStyle(
-  //               fontSize: 22,
-  //               fontWeight: FontWeight.w600,
-  //               color: AppColors.primary,
-  //             ),
-  //           ),
-  //         ],
-  //       ),
-  //       content: Text(
-  //         'You have successfully done your payment.',
-  //         textAlign: TextAlign.center,
-  //         style: globalTextStyle(fontSize: 14, color: AppColors.textSecondary),
-  //       ),
-
-  //       actions: [
-  //         SizedBox(
-  //           width: double.infinity,
-  //           child: CustomButton(
-  //             text: "Chat",
-  //             onTap: () {
-  //               Get.back(); // Close dialog
-  //               Get.until((route) => route.isFirst);
-  //             },
-  //           ),
-  //         ),
-  //       ],
-  //     ),
-  //   );
-  // }
 }

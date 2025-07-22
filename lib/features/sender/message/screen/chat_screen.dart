@@ -4,7 +4,6 @@ import 'package:josi/core/style/global_text_style.dart';
 import 'package:josi/core/utils/constants/app_colors.dart';
 import 'package:josi/features/sender/message/controller/message_controller.dart';
 import 'package:josi/features/sender/message/model/message_model.dart';
-import 'package:josi/features/sender/message/screen/call_screen.dart';
 
 class ChatScreen extends StatelessWidget {
   final User user;
@@ -63,14 +62,6 @@ class ChatScreen extends StatelessWidget {
             ),
           ],
         ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.call, color: AppColors.primary),
-            onPressed: () {
-              Get.to(() => CallScreen(user: user));
-            },
-          ),
-        ],
       ),
       body: Column(
         children: [
