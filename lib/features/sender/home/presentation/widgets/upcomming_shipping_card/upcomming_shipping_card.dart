@@ -23,7 +23,7 @@ class UpcomingShippingCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withValues(alpha: 0.1),
+            color: Colors.grey.withValues(alpha: 0.2),
             blurRadius: 10,
             offset: Offset(0, 2),
           ),

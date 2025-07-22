@@ -18,14 +18,16 @@ class AllowLocationScreen extends StatelessWidget {
       backgroundColor: Color(0xff969696),
       body: Stack(
         children: [
-           Container(
+          Container(
             height: double.infinity,
             width: double.infinity,
-            decoration: BoxDecoration(
-              color: Color(0xff969696),
-            ),
+            decoration: BoxDecoration(color: Color(0xff969696)),
             child: Center(
-              child: Image.asset(IconPath.allowLocationIcon, height: 200.h,width: 200.w),
+              child: Image.asset(
+                IconPath.allowLocationIcon,
+                height: 200.h,
+                width: 200.w,
+              ),
             ),
           ),
           Positioned(
@@ -38,50 +40,68 @@ class AllowLocationScreen extends StatelessWidget {
                 color: AppColors.white,
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(26),
-                  topLeft: Radius.circular(26)
-                
+                  topLeft: Radius.circular(26),
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.only(left: 27,right: 27),
+                padding: const EdgeInsets.only(left: 27, right: 27),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    CustomText(text: "Allow Access",fontSize: 20.sp,fontWeight: FontWeight.w600),
+                    CustomText(
+                      text: "Allow Access",
+                      fontSize: 20.sp,
+                      fontWeight: FontWeight.w600,
+                    ),
                     SizedBox(height: 9.h),
-                    CustomText(text: 'To enjoy your ride experience Please allow us the following permissions',textAlign: TextAlign.center,color: AppColors.textSecondary),
+                    CustomText(
+                      text:
+                          'To enjoy your ride experience Please allow us the following permissions',
+                      textAlign: TextAlign.center,
+                      color: AppColors.textSecondary,
+                    ),
                     SizedBox(height: 10.h),
                     Row(
                       children: [
-                        Icon(Icons.location_on_rounded,color: Colors.grey),
-                        CustomText(text: ' Allow Location all the time - To book a taxi',color: AppColors.textSecondary),
+                        Icon(Icons.location_on_rounded, color: Colors.grey),
+                        CustomText(
+                          text: ' Allow Location all the time - To book a taxi',
+                          color: AppColors.textSecondary,
+                        ),
                       ],
                     ),
                     SizedBox(height: 10.h),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Icon(Icons.location_on_rounded,color: Colors.grey),
-                        Expanded(child: CustomText(text: ' Enable Background Location - to give you ride \nrequest even if your app is in background',color: AppColors.textSecondary)),
+                        Icon(Icons.location_on_rounded, color: Colors.grey),
+                        Expanded(
+                          child: CustomText(
+                            text:
+                                ' Enable Background Location - to give you ride \nrequest even if your app is in background',
+                            color: AppColors.textSecondary,
+                          ),
+                        ),
                       ],
                     ),
                     SizedBox(height: 16.h),
                     CustomButton(
-                        text: 'Allow Access',
-                        onTap: (){
-                          _allowLocationPopUp();
-                        })
+                      text: 'Allow Access',
+                      onTap: () {
+                        _allowLocationPopUp();
+                      },
+                    ),
                   ],
                 ),
               ),
             ),
-          )
-
+          ),
         ],
       ),
     );
   }
+
   void _allowLocationPopUp() {
     showDialog(
       context: Get.context!, // Or pass context if you're not using GetX
@@ -91,38 +111,50 @@ class AllowLocationScreen extends StatelessWidget {
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Image.asset(IconPath.locationIcon, height: 50.h,width: 50.w),
+              Image.asset(IconPath.locationIcon, height: 50.h, width: 50.w),
               SizedBox(height: 16.h),
-              CustomText(text: 'Allow Routes Driver to access this device’s location?',textAlign: TextAlign.center,fontSize: 16.sp,fontWeight: FontWeight.w500),
+              CustomText(
+                text: 'Allow Routes Driver to access this device’s location?',
+                textAlign: TextAlign.center,
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w500,
+              ),
               SizedBox(height: 20.h),
               CustomButton(
-                  text: 'While using the app',
-                  onTap: (){
-                    if(AuthService.userRole == "SENDER"){
-                      Get.offAllNamed(AppRoute.setUpProfileScreen);
-                    }else{
-                      Get.offAllNamed(AppRoute.travelerSetUpProfileScreen);
-                    }
-                  }),
+                text: 'While using the app',
+                onTap: () {
+                  if (AuthService.userRole == "SENDER") {
+                    Get.offAllNamed(AppRoute.navBar);
+                  } else {
+                    Get.offAllNamed(AppRoute.travelerNavBar);
+                  }
+                },
+              ),
               SizedBox(height: 16.h),
               CustomOutlineButton(
                 text: 'One this time',
-                  onPressed: (){
-                    if(AuthService.userRole == "SENDER"){
-                      Get.offAllNamed(AppRoute.setUpProfileScreen);
-                    }else{
-                      Get.offAllNamed(AppRoute.travelerSetUpProfileScreen);
-                    }
-                  }),
+                onPressed: () {
+                  if (AuthService.userRole == "SENDER") {
+                    Get.offAllNamed(AppRoute.navBar);
+                  } else {
+                    Get.offAllNamed(AppRoute.navBar);
+                  }
+                },
+              ),
               SizedBox(height: 24.h),
               TextButton(
-                  onPressed: (){
-                    if(AuthService.userRole == "SENDER"){
-                      Get.offAllNamed(AppRoute.setUpProfileScreen);
-                    }else{
-                      Get.offAllNamed(AppRoute.travelerSetUpProfileScreen);
-                    }
-                  }, child: CustomText(text: "Don't allow",color: Color(0xff7C8091),))
+                onPressed: () {
+                  if (AuthService.userRole == "SENDER") {
+                    Get.offAllNamed(AppRoute.navBar);
+                  } else {
+                    Get.offAllNamed(AppRoute.navBar);
+                  }
+                },
+                child: CustomText(
+                  text: "Don't allow",
+                  color: Color(0xff7C8091),
+                ),
+              ),
             ],
           ),
         );

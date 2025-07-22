@@ -32,4 +32,9 @@ class IconPath {
   static const String paypalIcon = '$_basePath/paypal_icon.png';
   static const String stripeIcon = '$_basePath/stripe.png';
   static const String paymentSuccessIcon = '$_basePath/payment_success.png';
+  static const String location = '$_basePath/location.png';
+  static const String userIcon = '$_basePath/user.png';
+  static const String emaiIcon = '$_basePath/mail.png';
+  static const String phoneIcon = '$_basePath/phone.png';
+  static const String passwordIcon = '$_basePath/lock.png';
 }

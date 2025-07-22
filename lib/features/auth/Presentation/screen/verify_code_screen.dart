@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:josi/core/utils/constants/app_sizer.dart';
+import 'package:josi/features/sender/loacation_set_up_profile/presentation/screen/set_up_profile_screen.dart';
 import 'package:pinput/pinput.dart';
 import '../../../../core/common/widgets/custom_appbar.dart';
 import '../../../../core/common/widgets/custom_button.dart';
@@ -87,8 +88,12 @@ class VerifyCodeScreen extends GetView<VerifyController> {
               SizedBox(height: 40.h),
               CustomButton(
                 text: 'Continue',
-                onTap: () {
+                onTap: () async {
+                  // Show dialog first
                   _verifySuccessPopUp();
+                  await Future.delayed(Duration(seconds: 2));
+                  Get.back();
+                  Get.to(() => SetUpProfileScreen());
                 },
               ),
               SizedBox(height: 24.h),
@@ -125,12 +130,18 @@ class VerifyCodeScreen extends GetView<VerifyController> {
             children: [
               Image.asset(IconPath.verifyIcon, height: 120.h),
               SizedBox(height: 24.h),
-              CustomText(text: 'Account  verified Successfully',textAlign: TextAlign.center,fontSize: 20.sp,fontWeight: FontWeight.w600),
+              CustomText(
+                text: 'OTP verified Successfully',
+                textAlign: TextAlign.center,
+                fontSize: 20.sp,
+                fontWeight: FontWeight.w600,
+              ),
               SizedBox(height: 24.h),
               CustomButton(
                 text: 'Done',
                 onTap: () {
-                  Get.toNamed(AppRoute.signInScreen);
+                  // Get.to(() => SetUpProfileScreen());
+                  Get.toNamed(AppRoute.setUpProfileScreen);
                 },
               ),
             ],
