@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:josi/core/style/global_text_style.dart';
 import 'package:josi/core/utils/constants/app_colors.dart';
 import 'package:josi/features/sender/profile/controller/profile_controller.dart';
 
@@ -19,9 +20,9 @@ class LanguageSelectionScreen extends StatelessWidget {
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Get.back(),
         ),
-        title: const Text(
+        title: Text(
           'Language',
-          style: TextStyle(
+          style: globalTextStyle(
             color: Colors.black,
             fontSize: 18,
             fontWeight: FontWeight.w500,
@@ -131,7 +132,7 @@ class LanguageOption extends StatelessWidget {
             Expanded(
               child: Text(
                 name,
-                style: const TextStyle(
+                style: globalTextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w400,
                   color: Colors.black87,

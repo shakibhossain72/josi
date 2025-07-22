@@ -38,13 +38,13 @@ class Sentpackage extends GetView<SentPackageController> {
                 SizedBox(height: 10.h),
 
                 CustomText(
-                  text: 'Upload profile picture',
+                  text: 'Receiver Information',
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
                   color: AppColors.primary,
                   textAlign: TextAlign.start,
                 ),
-                SizedBox(height: 52.h),
+                SizedBox(height: 32.h),
                 CustomText(
                   text: 'Name',
                   fontSize: 16.sp,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:josi/core/style/global_text_style.dart';
 import 'package:josi/core/utils/constants/app_sizer.dart';
 import 'package:josi/routes/app_routes.dart';
 import '../../../../../core/common/widgets/custom_appbar.dart';
@@ -12,12 +13,12 @@ class CancelOrderScreen extends GetView<CancelController> {
   CancelOrderScreen({super.key});
 
   final List<String> reasons = [
-    'Some other work, can’t come',
-    'I am out of town ',
+    'Security issue with the package',
+    'Booking made by mistake ',
     'I have better deal',
-    'I want to book another event',
-    'I just want to cancel',
-    'Event location is too far from my location',
+    'Travel date changed',
+    'Wrong package content',
+    'No communication from traveler',
     'Other reason',
   ];
 
@@ -55,15 +56,15 @@ class CancelOrderScreen extends GetView<CancelController> {
                   fontWeight: FontWeight.w700,
                 ),
 
-               // SizedBox(height: 16),
+                // SizedBox(height: 16),
                 ListView.builder(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
                   itemCount: reasons.length,
                   itemBuilder: (context, index) {
                     return Obx(
-                          () => RadioListTile<String>(
-                            contentPadding: EdgeInsets.zero,
+                      () => RadioListTile<String>(
+                        contentPadding: EdgeInsets.zero,
                         activeColor: AppColors.primary,
                         title: CustomText(
                           text: reasons[index],
@@ -80,44 +81,45 @@ class CancelOrderScreen extends GetView<CancelController> {
                   },
                 ),
                 SizedBox(height: 20.h),
-                Obx(() => controller.selectedReason.value == 'Other reason'
+                Obx(
+                  () => controller.selectedReason.value == 'Other reason'
                       ? Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CustomText(
-                        text: 'Other',
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.w600,
-                      ),
-                      SizedBox(height: 10),
-                      TextField(
-                        onChanged: controller.updateCustomReason,
-                        decoration: InputDecoration(
-                          hintText: 'Other reason...',
-                          hintStyle: TextStyle(
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.textSecondary,
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(16),
-                            borderSide: BorderSide(
-                              color: AppColors.containerBorder,
-                            ), // Default state
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(16),
-                            borderSide: BorderSide(
-                              color: AppColors.containerBorder,
-                              width: 2,
-                            ), // Focused state
-                          ),
-                        ),
-                        maxLines: 2,
-                      ),
-                      SizedBox(height: 10),
-                    ],
-                  )
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            CustomText(
+                              text: 'Other',
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w600,
+                            ),
+                            SizedBox(height: 10),
+                            TextField(
+                              onChanged: controller.updateCustomReason,
+                              decoration: InputDecoration(
+                                hintText: 'Other reason...',
+                                hintStyle: globalTextStyle(
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.textSecondary,
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(16),
+                                  borderSide: BorderSide(
+                                    color: AppColors.containerBorder,
+                                  ), // Default state
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(16),
+                                  borderSide: BorderSide(
+                                    color: AppColors.containerBorder,
+                                    width: 2,
+                                  ), // Focused state
+                                ),
+                              ),
+                              maxLines: 2,
+                            ),
+                            SizedBox(height: 10),
+                          ],
+                        )
                       : SizedBox.shrink(),
                 ),
                 SizedBox(height: 20),
@@ -154,16 +156,18 @@ class CancelOrderScreen extends GetView<CancelController> {
               SizedBox(height: 16.h),
               CustomText(
                 text:
-                'We will continue to improve our service & satisfy you on the next order.',
+                    'We will continue to improve our service & satisfy you on the next order.',
                 textAlign: TextAlign.center,
                 color: AppColors.textSecondary,
                 fontSize: 16.sp,
               ),
               SizedBox(height: 32.h),
-              CustomButton(text: 'Ok',
-                  onTap: () {
-                      Get.toNamed(AppRoute.navBar);
-                  }),
+              CustomButton(
+                text: 'Ok',
+                onTap: () {
+                  Get.toNamed(AppRoute.navBar);
+                },
+              ),
             ],
           ),
         );

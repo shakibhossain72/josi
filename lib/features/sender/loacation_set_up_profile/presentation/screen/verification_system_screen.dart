@@ -145,10 +145,16 @@ class VerificationSystemScreen extends StatelessWidget {
                 CustomButton(
                   text: 'Continue',
                   onTap: () {
-                    if (controller.validateCheckbox()) {
+                    if (controller.validateCheckbox() &&
+                        controller.validateImages()) {
                       _verifySuccessPopUp();
                     }
                   },
+                  // onTap: () {
+                  //   if (controller.validateCheckbox()) {
+                  //     _verifySuccessPopUp();
+                  //   }
+                  // },
                 ),
               ],
             ),
@@ -158,10 +164,148 @@ class VerificationSystemScreen extends StatelessWidget {
     );
   }
 
+  // Widget imageUploadBox({required bool isFront}) {
+  //   final Rx<File?> image = isFront
+  //       ? controller.frontImage
+  //       : controller.backImage;
+  //   final RxBool isError = isFront
+  //       ? controller.isFrontImageError
+  //       : controller.isBackImageError;
+
+  //   return Obx(() {
+  //     return Padding(
+  //       padding: const EdgeInsets.only(bottom: 16),
+  //       child: DottedBorder(
+
+  //         color: isError.value
+  //             ? Colors.red
+  //             : AppColors.textSecondary.withValues(alpha: 0.3),
+  //         options: RoundedRectDottedBorderOptions(
+  //           dashPattern: const [15, 5],
+  //           strokeWidth: 2,
+  //           radius: Radius.circular(25),
+  //         ),
+  //         child: Container(
+  //           padding: EdgeInsets.all(10),
+  //           decoration: BoxDecoration(
+  //             color: Colors.white,
+  //             borderRadius: BorderRadius.circular(25),
+  //           ),
+  //           child: Column(
+  //             crossAxisAlignment: CrossAxisAlignment.center,
+  //             children: [
+  //               if (image.value != null)
+  //                 Stack(
+  //                   children: [
+  //                     ClipRRect(
+  //                       borderRadius: BorderRadius.circular(12),
+  //                       child: Image.file(
+  //                         image.value!,
+  //                         width: double.infinity,
+  //                         height: 200,
+  //                         fit: BoxFit.cover,
+  //                       ),
+  //                     ),
+  //                     Positioned(
+  //                       top: 8,
+  //                       right: 8,
+  //                       child: GestureDetector(
+  //                         onTap: () => controller.removeImage(isFront: isFront),
+  //                         child: Container(
+  //                           padding: const EdgeInsets.all(4),
+  //                           decoration: BoxDecoration(
+  //                             color: Colors.black.withValues(alpha: 0.6),
+  //                             borderRadius: BorderRadius.circular(20),
+  //                           ),
+  //                           child: const Icon(
+  //                             Icons.close,
+  //                             color: Colors.white,
+  //                             size: 20,
+  //                           ),
+  //                         ),
+  //                       ),
+  //                     ),
+  //                   ],
+  //                 )
+  //               else ...[
+  //                 Icon(Icons.camera_alt_outlined, size: 36),
+  //                 SizedBox(height: 8),
+  //                 Text(
+  //                   isFront
+  //                       ? "Front side of your document"
+  //                       : "Back side of your document",
+  //                   style: globalTextStyle(
+  //                     fontSize: 22.sp,
+  //                     fontWeight: FontWeight.w600,
+  //                     color: AppColors.textPrimary,
+  //                   ),
+  //                 ),
+  //                 SizedBox(height: 8),
+  //                 Text(
+  //                   'Upload your document\nSupports: JPG, PNG',
+  //                   textAlign: TextAlign.center,
+  //                   style: globalTextStyle(
+  //                     fontSize: 16.sp,
+  //                     fontWeight: FontWeight.w500,
+  //                     color: AppColors.textSecondary,
+  //                   ),
+  //                 ),
+  //                 if (isError.value) // Show error message if validation fails
+  //                   Padding(
+  //                     padding: const EdgeInsets.only(top: 8),
+  //                     child: Text(
+  //                       'Please upload ${isFront ? 'front' : 'back'} image',
+  //                       style: TextStyle(color: Colors.red, fontSize: 14.sp),
+  //                     ),
+  //                   ),
+  //                 SizedBox(height: 32),
+  //                 Row(
+  //                   children: [
+  //                     Expanded(
+  //                       child: OutlinedButton(
+  //                         onPressed: () => controller.pickImage(
+  //                           isFront: isFront,
+  //                           source: ImageSource.camera,
+  //                         ),
+  //                         child: CustomText(
+  //                           text: 'Camera',
+  //                           fontSize: 14.sp,
+  //                           fontWeight: FontWeight.w400,
+  //                         ),
+  //                       ),
+  //                     ),
+  //                     SizedBox(width: 16),
+  //                     Expanded(
+  //                       child: OutlinedButton(
+  //                         onPressed: () => controller.pickImage(
+  //                           isFront: isFront,
+  //                           source: ImageSource.gallery,
+  //                         ),
+  //                         child: CustomText(
+  //                           text: 'Choose a file',
+  //                           fontSize: 14.sp,
+  //                           fontWeight: FontWeight.w400,
+  //                         ),
+  //                       ),
+  //                     ),
+  //                   ],
+  //                 ),
+  //               ],
+  //             ],
+  //           ),
+  //         ),
+  //       ),
+  //     );
+  //   });
+  // }
+
   Widget imageUploadBox({required bool isFront}) {
     final Rx<File?> image = isFront
         ? controller.frontImage
         : controller.backImage;
+    final RxBool isError = isFront
+        ? controller.isFrontImageError
+        : controller.isBackImageError;
     return Obx(() {
       return Padding(
         padding: const EdgeInsets.only(bottom: 16),
@@ -170,7 +314,11 @@ class VerificationSystemScreen extends StatelessWidget {
             dashPattern: const [15, 5],
             strokeWidth: 2,
             radius: Radius.circular(25),
-            color: AppColors.textSecondary.withValues(alpha: 0.3),
+
+            // color: AppColors.textSecondary.withValues(alpha: 0.3),
+            color: isError.value
+                ? Colors.red
+                : AppColors.textSecondary.withValues(alpha: 0.3),
           ),
           child: Container(
             padding: EdgeInsets.all(10),
