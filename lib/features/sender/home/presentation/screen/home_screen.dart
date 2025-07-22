@@ -6,6 +6,7 @@ import 'package:josi/core/utils/constants/app_colors.dart';
 import 'package:josi/core/utils/constants/app_sizer.dart';
 import 'package:josi/core/utils/constants/icon_path.dart';
 import 'package:josi/features/sender/home/presentation/controller/current_shipping_controller.dart';
+import 'package:josi/features/sender/home/presentation/screen/filter_screen.dart';
 import 'package:josi/features/sender/home/presentation/widgets/current_shipping_card/current_shipping_card_sections.dart';
 import 'package:josi/features/sender/home/presentation/widgets/upcomming_shipping_card/upcomming_shipping_screen.dart';
 import 'package:josi/features/sender/notification/screen/notification_screen.dart';
@@ -133,12 +134,12 @@ class HomeScreen extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 8),
       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 4.0),
       decoration: BoxDecoration(
-        // color: Color(0xFFf9f9f9),
+        color: Color(0xFFf9f9f9),
         borderRadius: BorderRadius.circular(25),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withValues(alpha: 0.1),
-            blurRadius: 0,
+            color: Colors.grey.withValues(alpha: 0.3),
+            blurRadius: 10,
             offset: Offset(0, 2),
           ),
         ],
@@ -157,6 +158,7 @@ class HomeScreen extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                 ),
                 decoration: InputDecoration(
+                  fillColor: AppColors.white,
                   hintText: 'Search.....',
                   border: InputBorder.none,
                   enabledBorder: InputBorder.none,
@@ -173,12 +175,12 @@ class HomeScreen extends StatelessWidget {
 
             GestureDetector(
               onTap: () {
-                // showModalBottomSheet(
-                //   context: context,
-                //   isScrollControlled: true,
-                //   backgroundColor: Colors.transparent,
-                //   builder: (context) => FilterBottomSheet(),
-                // );
+                showModalBottomSheet(
+                  context: Get.context!,
+                  isScrollControlled: true,
+                  backgroundColor: Colors.transparent,
+                  builder: (context) => FilterBottomSheet(),
+                );
               },
               child: Image.asset(IconPath.filterIcon, height: 24, width: 24),
             ),
